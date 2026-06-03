@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: mmglowbeauty-api
+    ports:
+      - "8080:8080"
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/mmglowbeauty
+      - JWT_SECRET=${JWT_SECRET:-mmglowbeauty-dev-only-change-in-production}
+      - MAIL_HOST=smtp.gmail.com
+      - MAIL_USERNAME=${MAIL_USERNAME:-}
+      - MAIL_PASSWORD=${MAIL_PASSWORD:-}
+      - NOTIFICACION_CANAL=${NOTIFICACION_CANAL:-EMAIL}
+      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-http://localhost:5173}
+      - STORAGE_PROVIDER=${STORAGE_PROVIDER:-local}
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo:7
+    container_name: mmglowbeauty-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongo_data:

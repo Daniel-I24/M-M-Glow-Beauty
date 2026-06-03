@@ -1,0 +1,40 @@
+# Maven / Java
+target/
+*.class
+*.jar
+*.war
+!**/maven-wrapper.jar
+
+# Logs y temporales
+*.log
+logs/
+compile.log
+test.log
+
+# Variables de entorno (secretos)
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+.settings/
+.project
+.classpath
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Spring Boot
+.spring-boot-devtools.properties
+
+# Herramientas locales (PlantUML jar, no subir)
+tools/
+
+# Salida duplicada de PlantUML (usar solo docs/VistaDesarrollo.png)
+docs/vista-desarrollo-mmglowbeauty.png
