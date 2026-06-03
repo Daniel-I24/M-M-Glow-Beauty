@@ -52,6 +52,12 @@ com.mmglowbeauty/
 - Maven 3.8+
 - MongoDB 7.0+ (o Docker)
 
+### Despliegue en Render (producción)
+
+Ver guía paso a paso: **[DEPLOY-RENDER.md](DEPLOY-RENDER.md)** (MongoDB Atlas + Render Docker).
+
+Los diagramas de arquitectura están en la carpeta local `docs/` (no se suben a GitHub).
+
 ### Instalación Local
 
 1. **Clonar el repositorio**
